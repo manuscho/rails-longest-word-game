@@ -1,0 +1,34 @@
+<br>
+<h1><strong>Outcome</strong></h1>
+
+<img id="drag1" src=<%= @url %> width="600" height="250">
+
+
+<p>Your answer was <strong><%= params[:answer] %></strong>.</p>
+
+<br>
+<h2><%= @outcome %></h2>
+<br>
+
+<br>
+<%= link_to "START NEW GAME", new_path , class: "btn btn-primary"%>
+<br>
+<br>
+<h2>Highscore</h2>
+
+<table class="table">
+  <tr>
+    <th>Word</th>
+    <th>Score</th>
+  </tr>
+
+  <% @highscore.each do |result| %>
+    <tr><td><%= result["answer"] %></td><td><%= result["score"] %></td></tr>
+  <% end %>
+
+</table>
+<br>
+  <%= link_to "Clear Highscore", clear_path , class: "btn btn-primary", method: :delete%>
+
+<br>
+<br>

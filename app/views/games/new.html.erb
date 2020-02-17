@@ -1,0 +1,22 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Which word can you create?</h1>
+
+<% @letters.each do |letter| %>
+<ul>
+  <li><%= letter %> </li>
+</ul>
+<% end %>
+<br>
+
+<form action="/score" method="get">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <%= hidden_field_tag :start, @start %>
+  <input type="text" name="answer" placeholder="What's the word?">
+  <input type="submit" value="Let's go">
+</form>
+
